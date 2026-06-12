@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <!--
+  تحديد ترميز UTF-8 لضمان عرض النصوص العربية بشكل صحيح
+  -->
+  <meta charset="UTF-8" />
+  <!--
+  إعداد الصفحة لتكون متجاوبة مع جميع أحجام الشاشات
+  (حاسوب، تابلت، هاتف)
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+  عنوان الصفحة الذي يظهر في شريط المتصفح
+  -->
+  <title>BuildSafe Gaza | نموذج المعاينة</title>
+
+  <!-- Bootstrap RTL  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- ملف CSS الخاص بالمشروع -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!--  شريط علوي بسيط للرجوع -->
+  <header class="assessment-header">
+    <div class="container d-flex align-items-center justify-content-between py-3">
+      <a href="index.html" class="back-link">
+        <i class="fa-solid fa-arrow-right"></i>
+        الرجوع للرئيسية
+      </a>
+
+      <div class="brand-mini d-flex align-items-center gap-2">
+        <img src="assets/images/logo.png" alt="BuildSafe Gaza" class="brand-logo">
+        <span class="brand-name">BuildSafe Gaza</span>
+      </div>
+    </div>
+  </header>
+
+  <!--  عنوان الصفحة -->
+  <section class="assessment-hero">
+    <div class="container text-center">
+      <h1 class="assessment-title">نموذج المعاينة الميدانية</h1>
+      <p class="assessment-subtitle">
+        أدخل البيانات بطريقة صحيحة لاصدار تقرير المعاينة الميدانية
+      </p>
+    </div>
+  </section>
+
+  <!--  نموذج المعاينة -->
+  <section class="assessment-section">
+    <div class="container">
+      <div class="assessment-card mx-auto">
+
+        <form id="assessmentForm">
+        <!-- بيانات صاحب المبنى -->
+        <div class="form-section">
+
+          <div class="form-section-header">
+            <h5>
+              <i class="fa-solid fa-user"></i>
+              بيانات صاحب المبنى
+            </h5>
+          </div>
+
+          <div class="row g-3">
+
+            <div class="col-md-4">
+              <label class="form-label">اسم صاحب المبنى</label>
+              <!--
+              حقول إدخال نصية مع خاصية required
+              لضمان عدم ترك البيانات الأساسية فارغة
+              -->
+                            <input
+                type="text"
+                id="ownerName"
+                class="form-control"
+                placeholder="الاسم الكامل"
+                required
+              >
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">رقم الهوية</label>
+              <input
+                type="text"
+                id="ownerId"
+                class="form-control"
+                placeholder="رقم الهوية"
+                required
+              >
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">رقم الجوال</label>
+              <input
+                type="tel"
+                id="ownerPhone"
+                class="form-control"
+                placeholder="مثال: 059xxxxxxx"
+                required
+              >
+            </div>
+
+          </div>
+
+        </div>
+
+        <hr class="form-divider">
+
+          <!-- بيانات المبنى -->
+          <h5 class="form-section-title">
+            <i class="fa-solid fa-building-circle-check"></i>
+            بيانات المبنى
+          </h5>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">رقم/كود المبنى</label>
+              <input type="text" id="buildingCode" class="form-control" placeholder="مثال: B-101" required>
+        
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">الموقع (الحي/المنطقة)</label>
+              <input type="text" id="location" class="form-control" placeholder="مثال: غزة - الشجاعية" required>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">نوع المبنى</label>
+              <!--
+              استخدام select لتحديد نوع المبنى
+              -->
+              <select id="buildingType" class="form-select" required>
+                <option value="" selected disabled>اختر</option>
+                <option>سكني</option>
+                <option>تجاري</option>
+                <option>مدرسة/مرفق عام</option>
+                <option>أخرى</option>
+              </select>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">عدد الطوابق</label>
+              <input type="number" min="1" id="floors" class="form-control" placeholder="مثال: 3" required>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">سنة البناء</label>
+              <input type="number" min="1900" max="2100" id="buildingYear" class="form-control" placeholder="مثال: 2008">
+            </div>
+          </div>
+
+          <hr class="form-divider">
+           <!--
+          هذا القسم يختص بتحديد نوع الضرر
+          وحالة المبنى ومستوى الخطورة بشكل مبدئي
+          -->
+          <h5 class="form-section-title">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            معلومات الضرر والتقييم
+          </h5>
+
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label">نوع الضرر الرئيسي</label>
+              <select id="damageType" class="form-select" required>
+                <option value="" selected disabled>اختر</option>
+                <option>ضرر بسيط </option>
+                <option>ضرر متوسط </option>
+                <option>ضرر بليغ </option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">
+                حالة المبنى من حيث السكن
+              </label>
+              <select id="occupancyStatus" class="form-select" required>
+                <option value="" selected disabled>اختر</option>
+                <option value="صالح للسكن">صالح للسكن</option>
+                <option value="غير صالح للسكن">غير صالح للسكن</option>
+              </select>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">مستوى الخطورة (مبدئي)</label>
+              <select id="riskLevel" class="form-select" required>
+                <option value="" selected disabled>اختر</option>
+                <option>منخفض</option>
+                <option>متوسط</option>
+                <option>عالي</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">ملاحظات المهندس (اختياري)</label>
+              <textarea id="notes" class="form-control" rows="4" placeholder="اكتب الملاحظات هنا..."></textarea>
+            </div>
+          </div>
+
+          <hr class="form-divider">
+
+           <!--
+          قسم الوسائط يسمح بإرفاق صور وفيديو
+          لتوثيق الأضرار بصريًا ودعم التقرير
+          -->
+          <h5 class="form-section-title">
+            <i class="fa-solid fa-camera"></i>
+            صور وفيديو 
+          </h5>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">رفع صور</label>
+              <!--
+              خاصية multiple تتيح رفع أكثر من صورة
+              -->
+              <input type="file" id="damageImages" class="form-control" accept="image/*" multiple>
+
+              <div class="form-hint">يفضل صور واضحة للتشققات/الأعمدة/الجدران.</div>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">رفع فيديو قصير (اختياري)</label>
+              <input type="file" class="form-control" accept="video/*">
+              <div class="form-hint">يفضل 20–40 ثانية لتوضيح الحالة.</div>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 flex-wrap justify-content-center mt-4">
+            <!--
+            زر حفظ المعاينة (Submit)
+            -->
+            <button type="submit" class="btn btn-success btn-lg px-5">
+              حفظ المعاينة
+            </button>
+            <!--
+            زر مسح الحقول يعيد النموذج لحالته الأصلية
+            -->
+            <button type="reset" class="btn btn-outline-secondary btn-lg px-5">
+              مسح الحقول
+            </button>
+            <!--
+            زر إنشاء التقرير يستدعي دالة JavaScript
+            لتوليد تقرير المعاينة بشكل ديناميكي
+            -->
+            <button type="button" class="btn btn-primary btn-lg px-5" onclick="generateReport()">
+            إنشاء تقرير
+            </button>
+
+          </div>
+
+          <p class="assessment-note text-center mt-4">
+            تنويه: هذا نموذج معاينة أولي ولا يُغني عن تقرير هندسي معتمد.
+          </p>
+
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- ================= REPORT SECTION ================= -->
+   <!--
+    هذا القسم مخصص لعرض تقرير المعاينة النهائي
+    ويكون مخفيًا افتراضيًا باستخدام d-none
+    ويظهر فقط بعد إنشاء التقرير
+    -->
+<section id="reportSection" class="report-section d-none">
+  <!--
+print-area يحدد الجزء الذي سيتم طباعته فقط
+عند استخدام window.print()
+-->
+  <div id="print-area" class="report-card">
+
+    <h2 class="report-title">تقرير المعاينة الميدانية</h2>
+    <p class="report-date">تاريخ التقرير: <span id="reportDate"></span></p>
+
+    <table class="report-table">
+      <tr>
+        <th>اسم صاحب المبنى</th>
+        <td id="rOwnerName"></td>
+    </tr>
+      <tr>
+        <th>رقم الهوية</th>
+        <td id="rOwnerId"></td>
+      </tr>
+      <tr>
+        <th>رقم الجوال</th>
+        <td id="rOwnerPhone"></td>
+      </tr>
+
+      <tr>
+        <th>رقم المبنى</th>
+        <td id="rBuildingCode"></td>
+      </tr>
+      <tr>
+        <th>الموقع</th>
+        <td id="rLocation"></td>
+      </tr>
+      <tr>
+        <th>نوع المبنى</th>
+        <td id="rBuildingType"></td>
+      </tr>
+      <tr>
+        <th>عدد الطوابق</th>
+        <td id="rFloors"></td>
+      </tr>
+      <tr>
+        <th>سنة البناء</th>
+        <td id="rbuildingYear"></td>
+      </tr>
+      <tr>
+        <th>نوع الضرر</th>
+        <td id="rDamageType"></td>
+      </tr> 
+      <tr>
+        <th>حالة المبنى </th>
+        <td id="roccupancyStatus"></td>
+      </tr> 
+      <tr>
+        <th>مستوى الخطورة</th>
+        <td id="rRiskLevel"></td>
+      </tr>
+      <tr>
+        <th>ملاحظات المهندس</th>
+        <td id="rNotes"></td>
+      </tr>
+    </table>
+      <h4 class="report-section-title">الصور المرفقة</h4>
+
+      <div id="reportImages" class="image-grid">
+        <!-- الصور المصغرة ستُضاف هنا -->
+      </div>
+
+    <div class="text-center mt-4">
+      <button class="btn btn-success btn-lg px-5 print-btn no-print" onclick="window.print()">
+        طباعة التقرير
+      </button>
+    </div>
+
+  </div>
+</section>
+<!-- Modal-->
+ <!--
+Modal من Bootstrap تظهر بعد إنشاء التقرير
+لتأكيد العملية وإعطاء المستخدم خيارات إضافية
+-->
+<div class="modal fade" id="reportModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">تم إنشاء التقرير</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body text-center">
+        <p>تم إنشاء تقرير المعاينة بنجاح.</p>
+        <p class="text-muted">ماذا تود أن تفعل الآن؟</p>
+      </div>
+
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          إغلاق
+        </button>
+        <button type="button" class="btn btn-primary" id="viewReportBtn">
+          عرض التقرير
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+ <!--
+Bootstrap JS لتفعيل المكونات التفاعلية مثل Modal
+-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ <!-- ملف JS -->
+<script src="js/main.js"></script>
+
+
+</body>
+</html>

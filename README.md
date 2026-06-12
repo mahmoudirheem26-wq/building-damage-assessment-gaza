@@ -1,51 +1,84 @@
-# building-damage-assessment-gaza
-Building Damage Assessment Platform for Gaza (2023)
 
-## Project Overview
+# BuildSafe Gaza  
+  ## منصة تقييم مبدئي للمباني المتضررة – غزة 2023
 
-A web-based platform designed to support field engineers in conducting preliminary assessments of partially damaged buildings in Gaza.
+📌 وصف المشروع
+BuildSafe Gaza هو مشروع واجهة أمامية (Frontend) يهدف إلى إنشاء منصة ويب تساعد في “التقييم المبدئي للمباني المتضررة جزئيًا ”نتيجة الحرب على غزة عام 2023.  
+تتيح المنصة للمهندس الميداني إدخال بيانات المبنى، الأضرار، مستوى الخطورة، ومعلومات المالك، ثم توليد تقرير معاينة قابل للطباعة بصيغة    PDF.
 
-The system allows engineers to:
+المشروع يركّز على :
+-	تنظيم البيانات. 
+-	سهولة الاستخدام.
+-	دعم جميع الأجهزة.
 
-* Enter building and owner information
-* Record damage details and severity levels
-* Upload images and videos for documentation
-* Generate structured assessment reports
-* Work offline and synchronize data when an internet connection becomes available
 
-## Features
+🎯 أهداف المشروع
+-	 تصميم Landing Page احترافية لعرض فكرة المنصة.
+-	إنشاء نموذج معاينة ميدانية منظم وسهل الاستخدام.
+-	جمع بيانات المبنى والأضرار بطريقة واضحة
+-	 توليد تقرير معاينة تلقائي اعتمادًا على المدخلات.
+-	دعم الطباعة بصيغة PDF .
 
-* Field Inspection Form
-* Damage Assessment Management
-* Media Upload System
-* Automated Report Generation
-* Offline Data Collection & Synchronization
-* User-Friendly Interface
-* Contact and Communication Module
+ 🛠️ التقنيات المستخدمة
+-	HTML : لبناء هيكل الصفحات.
+-	CSS3  : لتنسيق الواجهة ودعم الطباعة. 
+-	Bootstrap 5 :  لدعم التصميم المتجاوب (Responsive).
+-	JavaScript و JQuery :
+•	 لمعالجة بيانات النموذج والتحقق منها، ثم توليد تقرير المعاينة وعرضه بشكل ديناميكي.
+•	إضافة Events مثل ( التمرير السلس Smooth Scroll   ، Form Validation ، Submit  ،Click  و Hover      )
+•	إضافة تأثيرات حركية Animations
+•	
+-	Font Awesome : لاستخدام الأيقونات.
+-	Live Server (VS Code Extension) : لتشغيل المشروع محليًا.
 
-## Technology Stack
 
-### Frontend
 
-* HTML5
-* CSS3
-* Bootstrap 5
-* JavaScript
+📂 هيكل المشروع 
+📑 أقسام المشروع
+1.	Header & Navigation
+-	تم إنشاء Header  ثابت (Sticky Header) يحتوي على شعار المنصة واسمها.
+-	 تم استخدام  Navigation Bar  تحتوي على روابط داخلية (Anchors)  للتنقل بين أقسام الصفحة مثل:
+•	الرئيسية
+•	عن المنصة
+•	نموذج المعاينة
+•	الوسائط
+•	التواصل
+•  تم تفعيل خاصية التمرير السلس (Smooth Scrolling) باستخدام CSS لتحسين تجربة المستخدم عند التنقل بين الأقسام.
 
-### Backend
+2.	 Landing Page
+   - تعريف بالمشروع.
+   - صورة خلفية (Hero Section).
+   - أزرار ( اتصل بنا ، ابدأ المعاينة ) .
 
-* ASP.NET Core
+3.	قسم الخدمات
+-	توثيق الأضرار.
+-	تقييم مستوى الخطورة.
+-	رفع الصور والفيديو.
+-	توليد تقرير مختصر.
+-	دعم فرق العمل.
+-	تحديد موقع المبنى.
 
-### Database
+4.	نموذج المعاينة الميدانية
+-	بيانات صاحب المبنى.
+-	بيانات المبنى.
+-	 معلومات الضرر والتقييم.
+-	ملاحظات المهندس .
 
-* SQL Server
+5.	تقرير المعاينة
+-	عرض جميع البيانات المدخلة.
+-	عرض صور مصغّرة للأضرار.
+-	 زر طباعة التقرير بصيغة PDF.
 
-### Tools
+🖨️ الطباعة والتقرير
+-	التقرير مصمم للطباعة على ورق A4.
 
-* GitHub
-* Jira
-* Visual Studio
+- المادة: برمجة ويب وتصميم مواقع.
+-  إعداد الطالبتان 👨‍🎓 : 
+حلا أيمن عدنان العجوري   2301213068
+هديل أمين حسن العقاد   2320232462
+- التصميم: متجاوب ويدعم جميع الأجهزة
 
-## Project Goal
+### ✅ الخلاصة
+يمثل هذا المشروع تطبيقًا عمليًا لمفاهيم تطوير الويب باستخدام HTML وCSS و JavaScript و JQuery  ، مع التركيز على بناء واجهة استخدام حقيقية تخدم فكرة إنسانية وتطبيقية.
 
-To provide a digital, organized, and reliable solution for building damage assessment that improves documentation, reporting, and decision-making during reconstruction and emergency response efforts.
+
